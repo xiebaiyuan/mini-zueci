@@ -5,3 +5,5 @@ build/
 *.swo
 *.suo
 .DS_Store
+cmake-build-debug/
+*.so
