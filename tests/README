@@ -1,0 +1,69 @@
+Compile with the ZUECI_TEST option enabled:
+
+  cd <project-dir>
+  mkdir build
+  cd build
+  cmake -DZUECI_TEST=ON ..
+  make
+  sudo make install
+
+or on Windows:
+
+  cd <project-dir>
+  cmake -G "Visual Studio 16 2019" -DZUECI_TEST=ON -B build
+  cd build
+  cmake --build . --config Release
+
+You may need to set the LD_LIBRARY_PATH environment variable:
+
+  cd <project-dir>
+  cd build
+  export LD_LIBRARY_PATH=$(pwd)
+
+or on Window:
+
+  cd <project-dir>
+  cd build
+  set "PATH=%cd%\Release;%PATH%"
+
+To run all tests (within <build-dir>):
+
+  ctest
+
+Tests can also be run individually, eg:
+
+  tests/test_sb
+  tests/test_gb18030
+
+or on Windows:
+
+  tests\Release\test_sb
+
+To run a single test function within an individual test, use '-f <func-name>':
+
+  tests/test_big5 -f utf8_to_eci
+  tests/test_gb2312 -f eci_to_utf8
+
+To run a single dataset item in a single test function, use '-i <index>':
+
+  tests/test_gb2312 -f eci_to_utf8 -i 2
+
+To print which dataset items are being run, use '-d 16':
+
+  tests/test_gb2312 -f eci_to_utf8 -d 16 -i 2
+
+To run a range of dataset items in a single test function, use '-i <start>,<end>':
+
+  tests/test_gb2312 -f eci_to_utf8 -d 16 -i 2,5
+
+To exclude a single dataset item in a single test function, use '-x <index>':
+
+  tests/test_gb2312 -f eci_to_utf8 -d 16 -x 4
+
+This can also take a range, '-x <start>,<end>':
+
+  tests/test_gb2312 -f eci_to_utf8 -d 16 -x 4,6
+
+The include and exclude options can be used together:
+
+  tests/test_gb2312 -f eci_to_utf8 -d 16 -i 2,7 -x 4

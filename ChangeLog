@@ -1,0 +1,16 @@
+Version 1.0.1 (2022-10-21)
+==========================
+
+- CMake: add target_include_directories() (issue #1)
+- CMake: remove FindZueci.cmake install (issue #2)
+- CMake: add missing cmake_uninstall.cmake.in
+- git: add missing libzueci.rc
+- Add ZUECI_EMBED_NO_TO_ECI and ZUECI_EMBED_NO_TO_UTF8 defines
+- Remove tools/data/*.TXT and change tools/gen_zueci_[sm]b.php to get
+  data from net (except for GB2312.TXT & GB18030.TXT) (issue #3)
+
+
+Version 1.0.0 (2022-07-19)
+==========================
+
+Initial release
