@@ -1,9 +1,4 @@
 build/
-*~
-*.[ao]
-*.swp
-*.swo
-*.suo
+*.o
+*.a
 .DS_Store
-cmake-build-debug/
-*.so

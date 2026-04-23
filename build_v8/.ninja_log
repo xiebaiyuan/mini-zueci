@@ -1,0 +1,5 @@
+# ninja log v5
+0	54	1727421551211135226	CMakeFiles/zueci.dir/zueci.c.o	fb4a9334eb2e8dcf
+1	56	1727421551211124851	CMakeFiles/zueci-static.dir/zueci.c.o	eb9a1039867b8fe9
+58	90	1727421551249408000	libzueci-static.a	a550d9987942ba73
+56	96	1727421551253368131	libzueci.so	6d82425ec878bbc1
